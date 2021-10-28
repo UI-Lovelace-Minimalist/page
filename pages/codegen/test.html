@@ -1,0 +1,42 @@
+---
+layout: codegen_page
+title: Test
+permalink: codegen/:basename
+nav_order: 5
+parent: CodeGenerator
+published: false
+---
+
+<script src="/assets/js/test.js"></script>
+<form name="minimalist-generator-install-test" method="post" action="">
+  <fieldset>
+    <legend style="text-transform: uppercase;">Language</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Select the language you want to use in your templates</p>
+    <input type="radio" name="language" id="language_en" value="en" checked="checked"> <label for="language_en">English</label><br>
+    <input type="radio" name="language" id="language_de" value="de"> <label for="language_de">German</label><br>
+    <input type="radio" name="language" id="language_fr" value="fr"> <label for="language_fr">French</label><br>
+    <p class="text-small text-grey-dk-100 mb-0">Note: If your selected custom-cards offer language variables, they will be used automatically.</p>
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Custom-cards</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Select the custom-cards you want to include</p>
+    {% for card in site.custom_cards %}
+    <input type="checkbox" name="{{ card.name }}" id="{{ card.name }}" value="{{ card.name }}"> <label for="{{ card.name }}">{{ card.title }}</label><br>
+    {% endfor %}
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Example code</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Select, if some example code should be added</p>
+    <input type="checkbox" id="blue" name="blue" value="blue"> <label for="blue">blue</label>
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Generate</legend>
+    <input type="button" name="submit" value="Generate template code" onclick="test()"> <input type="reset" name="reset" value="Reset">
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Your template code</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">This is your generated code to paste into your config. See <a href="/installation/ui-mode">these instructions</a> for more details.</p>
+    <textarea id="generated_code" name="generated_code" rows="18" cols="60" style="width: 100%;"></textarea>
+  </fieldset>
+  <p id="test_p"></p>
+</form>

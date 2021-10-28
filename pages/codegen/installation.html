@@ -1,0 +1,64 @@
+---
+layout: page
+title: Installation
+permalink: codegen/:basename
+nav_order: 2
+parent: CodeGenerator
+---
+
+<script src="/assets/js/codegen-install.js"></script>
+<h1>CodeGenerator for installation (UI-mode)</h1>
+<p>Here you can generate the code you need to <strong>install</strong> this "theme" via `UI`-mode.</p>
+<p>It bundles all necessary template data, language variables and custom-cards into one single block, so you can copy & paste it into your raw-config-editor.</p>
+<details>
+  <summary>Show the instructions</summary>
+  <ol>
+    <li>Select the language you want to use</li>
+    <li>Select the custom-cards you want to install</li>
+    <li>Select example data, if you want to have some example code added</li>
+    <li>Click "Generate template code"</li>
+    <li>The code will be generated and shows up in the textarea underneath the generate button</li>
+    <li>Copy this code and paste it in your raw-config-editor</li>
+    <li>See <a href="/installation/ui-mode">these instructions</a>, if you don't know where to paste this.</li>
+  </ol>
+</details>
+<p class="text-small text-grey-dk-100 mb-0">Note: This generator is in beta state, so there may be issues! Thanks for understanding!</p>
+
+<form name="minimalist-generator-install" method="post" action="">
+  <fieldset>
+    <legend style="text-transform: uppercase;">Language</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Select the language you want to use in your templates</p>
+    <input type="radio" name="language" id="language_en" value="en" checked="checked"> <label for="language_en">English</label><br>
+    <input type="radio" name="language" id="language_de" value="de"> <label for="language_de">German</label><br>
+    <input type="radio" name="language" id="language_fr" value="fr"> <label for="language_fr">French</label><br>
+    <p class="text-small text-grey-dk-100 mb-0">Note: If your selected custom-cards offer language variables, they will be used automatically.</p>
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Custom-cards</legend>
+      <p style="margin-top: 0px; margin-bottom: 2px;">Select the custom-cards you want to include</p>
+      <input type="checkbox" id="card-aircondition" name="card-aircondition" value="card-aircondition"> <label for="card-aircondition">Aircondition</label><br>
+      <input type="checkbox" id="card-dwd-pollen" name="card-dwd-pollen" value="card-dwd-pollen"> <label for="card-dwd-pollen">DWD Pollen</label><br>
+      <input type="checkbox" id="card-flower" name="card-flower" value="card-flower"> <label for="">Flower</label><br>
+      <input type="checkbox" id="card-waste-collection" name="card-waste-collection" value="card-waste-collection"> <label for="">Waste Collection</label><br>
+      <input type="checkbox" id="card-welcome" name="card-welcome" value="card-welcome"> <label for="default">Welcome</label><br>
+      <input type="checkbox" id="card-nas" name="card-nas" value="card-nas" disabled> <label for="">NAS <i>(temporarily disabled)</i></label><br>
+      <input type="checkbox" id="card-playstation" name="card-playstation" value="card-playstation" disabled> <label for="default">Playstation <i>(temporarily disabled)</i></label><br>
+      <input type="checkbox" id="card-qubino" name="card-qubino" value="card-qubino" disabled> <label for="default">Qubino <i>(temporarily disabled)</i></label><br>
+      <input type="checkbox" id="card-thermostat" name="card-thermostat" value="card-thermostat" disabled> <label for="default">Thermostat <i>(temporarily disabled)</i></label><br>
+      <input type="checkbox" id="card-water-heater" name="card-water-heater" value="card-water-heater" disabled> <label for="default">Water Heater <i>(temporarily disabled)</i></label><br>
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Example code</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Select, if some example code should be added</p>
+    <input type="checkbox" id="example" name="example" value="example"> <label for="example">add example data</label>
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Generate</legend>
+    <input type="button" name="submit" value="Generate template code" onclick="generateInstallCode()"> <input type="reset" name="reset" value="Reset">
+  </fieldset>
+  <fieldset>
+    <legend style="text-transform: uppercase;">Your template code</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">This is your generated code to paste into your config. See <a href="/installation/ui-mode">these instructions</a> for more details.</p>
+    <textarea id="generated_code" name="generated_code" rows="18" cols="60" style="width: 100%;"></textarea>
+  </fieldset>
+</form>
