@@ -1,14 +1,42 @@
 ---
 title: AirCondition Card
-name: custom_card_tpx01_aicondition
+name: custom_card_tpx01_aircondition
 category: custom_card
 author: tpx01
 explanation: "The `custom_card_tpx01_aircondition` shows data from your air condition and gives you the possibility to control it."
-image_path: "/assets/images/light_slider.png"
+image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
 internal: false
 generator_install: true
 generator_example: true
 generator_button: true
+languages:
+  - language: de
+    code: |
+      custom_card_tpx01_aircondition_language_variables:
+        variables:
+          custom_card_tpx01_aircondition_dry: 'entfeuchten'
+          custom_card_tpx01_aircondition_heat: 'heizen'
+          custom_card_tpx01_aircondition_heat_cool: 'automatisch'
+          custom_card_tpx01_aircondition_cool: 'kühlen'
+          custom_card_tpx01_aircondition_fan_only: 'ventilator'
+  - language: fr
+    code: |
+      custom_card_tpx01_aircondition_language_variables:
+        variables:
+          custom_card_tpx01_aircondition_dry: 'déshumidifier'
+          custom_card_tpx01_aircondition_heat: 'chaleur'
+          custom_card_tpx01_aircondition_heat_cool: 'auto'
+          custom_card_tpx01_aircondition_cool: 'frais'
+          custom_card_tpx01_aircondition_fan_only: 'fan seulement'
+  - language: en
+    code: |
+      custom_card_tpx01_aircondition_language_variables:
+        variables:
+          custom_card_tpx01_aircondition_dry: 'dry'
+          custom_card_tpx01_aircondition_heat: 'heat'
+          custom_card_tpx01_aircondition_heat_cool: 'auto'
+          custom_card_tpx01_aircondition_cool: 'cool'
+          custom_card_tpx01_aircondition_fan_only: 'fan only'
 variants:
   - name: 
     title: 
@@ -224,7 +252,4 @@ variants:
             - border-radius: 14px
             - place-self: center
             - height: 42px
-    language_en:
-    language_de:
-    language_fr:
 ---

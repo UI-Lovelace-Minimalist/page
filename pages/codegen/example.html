@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: codegen_page
 title: Example
 permalink: codegen/:basename
 nav_order: 3
@@ -7,7 +7,8 @@ parent: CodeGenerator
 ---
 
 <script src="/assets/js/codegen-examples.js"></script>
-<h1>CodeGenerator for example code (UI-mode)</h1>
+<h1>CodeGenerator for example code</h1>
+<p class="text-big text-grey-dk-100 mb-0"><strong>works for both Yaml- and UI-mode</strong></p>
 <p>Here you can generate example code to see some of the possibilities this "theme" offers.</p>
 <p>Select what you want to try out and click "Generate example code".</p>
 <p><u>What this tool is:</u><br>This tool combines different options, to show the general scaffold to get the "theme" running. It shows the indentation and gives you examples to work with.</p>
@@ -17,50 +18,34 @@ parent: CodeGenerator
   <fieldset>
     <legend style="text-transform: uppercase;">Chips</legend>
     <p style="margin-top: 0px; margin-bottom: 2px;">Choose the chips, you want to use.</p>
-      <input type="checkbox" id="chip_temperature" name="chip_temperature" value="chip_temperature"> <label for="chip_temperature">Temperature</label><br>
-      <input type="checkbox" id="chip_icon_only" name="chip_icon_only" value="chip_icon_only"> <label for="chip_icon_only">Icon only</label><br>
-      <input type="checkbox" id="chip_icon_state" name="chip_icon_state" value="chip_icon_state"> <label for="chip_icon_state">Icon state</label><br>
-      <input type="checkbox" id="chip_double_state" name="chip_double_state" value="chip_double_state"> <label for="chip_double_state">Icon with double state</label><br>
-      <input type="checkbox" id="chip_back" name="chip_back" value="chip_back"> <label for="chip_back">Back</label><br>
-      <input type="checkbox" id="chip_presence_detection" name="chip_presence_detection" value="chip_presence_detection"> <label for="chip_presence_detection">Presence detection</label><br>
-      <input type="checkbox" id="chip_power_consumption" name="chip_power_consumption" value="chip_power_consumption"> <label for="chip_power_consumption">Power consumption</label><br>
+    {% for template in site.templates -%}
+    {% if template.category == 'chip' -%}
+    <input type="checkbox" id="{{ template.name }}" name="{{ template.name }}" value="{{ template.name }}"> <label for="{{ template.name }}">{{ template.title }}</label><br>
+    {% endif %}
+    {% endfor -%}
   </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Title</legend>
     <p style="margin-top: 0px; margin-bottom: 2px;">Would you like to set some titles?</p>
-    <input type="checkbox" id="card_title" name="card_title" value="card_title"> <label for="card_title">Yes, set some titles.</label>
+    <input type="checkbox" id="card_title" name="card_title" value="card_title"> <label for="card_title">Yes, set a title.</label>
   </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Cards</legend>
     <p style="margin-top: 0px; margin-bottom: 2px;">Select the cards you want to use.</p>
-    <fieldset>
-      <legend>1-line-cards</legend>
-        <input type="checkbox" id="card_generic" name="card_generic" value="card_generic"> <label for="card_generic">Generic</label><br>
-        <input type="checkbox" id="card_generic_swap" name="card_generic_swap" value="card_generic_swap"> <label for="card_generic_swap">Generic swap</label><br>
-        <input type="checkbox" id="card_light" name="card_light" value="card_light"> <label for="card_light">Light</label><br>
-        <input type="checkbox" id="card_light_slider" name="card_light_slider" value="card_light_slider"> <label for="card_light_slider">Light slider</label><br>
-        <input type="checkbox" id="card_power_outlet" name="card_power_outlet" value="card_power_outlet"> <label for="card_power_outlet">Power outlet</label><br>
-        <input type="checkbox" id="card_binary_sensor" name="card_binary_sensor" value="card_binary_sensor"> <label for="card_binary_sensor">Binary sensor</label><br>
-        <input type="checkbox" id="card_navigate" name="card_navigate" value="card_navigate"> <label for="card_navigate">Navigate</label><br>
-        <input type="checkbox" id="card_media_player" name="card_media_player" value="card_media_player"> <label for="card_media_player">Media Player</label><br>
-        <input type="checkbox" id="card_media_player_with_control" name="card_media_player_with_control" value="card_media_player_with_control"> <label for="card_media_player_with_control">Media player with control</label><br>
-        <input type="checkbox" id="card_battery" name="card_battery" value="card_battery"> <label for="card_battery">Battery</label><br>
-        <input type="checkbox" id="card_person" name="card_person" value="card_person"> <label for="card_person">Person</label><br>
-    </fieldset>
-    <fieldset>
-      <legend>2-line-cards</legend>
-        <input type="checkbox" id="card_cover_with_buttons" name="card_cover_with_buttons" value="card_cover_with_buttons"> <label for="card_cover_with_buttons">Cover with buttons</label><br>
-        <input type="checkbox" id="card_graph" name="card_graph" value="card_graph"> <label for="card_graph">Graph</label><br>
-        <input type="checkbox" id="card_media_player_with_controls" name="card_media_player_with_controls" value="card_media_player_with_controls"> <label for="card_media_player_with_controls">Media player with controls</label><br>
-    </fieldset>
+    {% for template in site.templates -%}
+    {% if template.category == 'card' and template.name != 'card_title' -%}
+    <input type="checkbox" id="{{ template.name }}" name="{{ template.name }}" value="{{ template.name }}"> <label for="{{ template.name }}">{{ template.title }}</label><br>
+    {% endif -%}
+    {% endfor -%}
   </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Generate</legend>
-    <input type="button" name="submit" value="Generate example code" onclick="generateExampleCode()"> <input type="reset" name="reset" value="Reset">
+    <input type="button" name="submit" value="Generate example code" onclick="test()"> <input type="reset" name="reset" value="Reset">
   </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Your example code</legend>
-    <p style="margin-top: 0px; margin-bottom: 2px;">This is your generated code to paste into your config.</p>
-    <textarea id="code" name="code" rows="18" cols="60" style="width: 100%;"></textarea>
+    <p style="margin-top: 0px; margin-bottom: 2px;">This is your generated code to paste into your config.<br>
+    <span class="text-big text-grey-dk-100 mb-0"><strong>Remember to change all necessary entries and variables!</strong></span></p>
+    <textarea id="generated_code" name="generated_code" rows="18" cols="60" style="width: 100%;"></textarea>
   </fieldset>
 </form>

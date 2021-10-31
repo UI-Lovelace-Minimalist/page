@@ -3,7 +3,7 @@ title: Battery Card
 name: card_battery
 category: card
 explanation: "The `battery-card` is a slightly enhanced `generic-card`, just to ease the use. You could always configure it from the `generic-card` yourself."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/card_battery.png"
 internal: false
 generator_install: true
 generator_example: true
@@ -33,44 +33,71 @@ ui: |-
   entity: sensor.livingoom_thermometer_battery
 code: |-
   card_battery:
-    template: card_generic
+    template: 
+      - icon_info_bg
+    tap_action:
+      action: more-info
     icon: |
       [[[
-          var battery = variables.ulm_card_battery_attribute != null ? states[entity.entity_id].attributes. + variables.ulm_card_battery_attribute : entity.state;
           var icon = 'mdi:help-circle-outline';
-          if (battery >= 90){
-            icon = 'mdi:battery';
-            return icon;
-          } else if(battery >= 80){
-            icon = 'mdi:battery-90';
-            return icon;
-          } else if(battery >= 70){
-            icon = 'mdi:battery-80️';
-            return icon;
-          } else if(battery >= 60){
-            icon = 'mdi:battery-70️';
-            return icon;
-          } else if(battery >= 50){
-            icon = 'mdi:battery-60️';
-            return icon;
-          } else if(battery >= 40){
-            icon = 'mdi:battery-50️';
-            return icon;
-          } else if(battery >= 30){
-            icon = 'mdi:battery-40️';
-            return icon;
-          } else if(battery >= 20){
-            icon = 'mdi:battery-30️';
-            return icon;
-          } else if(battery >= 10){
-            icon = 'mdi:battery-20️';
-            return icon;
-          } else if(battery >= 0){
-            icon = 'mdi:battery-10️';
-            return icon;
-          } else if(battery == 0){
-            icon = 'mdi:battery-outline️';
-            return icon;
+          var battery = '';
+  
+          if (variables.ulm_card_battery_attribute != null){
+            battery = states[entity.entity_id].attributes[variables.ulm_card_battery_attribute]
+          } else {
+            battery = states[entity.entity_id].state
           }
+  
+          if (battery == 100){
+            icon = 'mdi:battery'
+          } else if (battery >= 90){
+            icon = 'mdi:battery-90'
+          } else if (battery >= 80){
+            icon = 'mdi:battery-80'
+          } else if (battery >= 70){
+            icon = 'mdi:battery-70'
+          } else if (battery >= 60){
+            icon = 'mdi:battery-60'
+          } else if (battery >= 50){
+            icon = 'mdi:battery-50'
+          } else if (battery >= 40){
+            icon = 'mdi:battery-40'
+          } else if (battery >= 30){
+            icon = 'mdi:battery-30'
+          } else if (battery >= 20){
+            icon = 'mdi:battery-20'
+          } else if (battery >= 10){
+            icon = 'mdi:battery-10'
+          } else {
+            icon = 'mdi:battery-outline'
+          }
+  
+          return icon;
       ]]]
+    label: "[[[ return states[entity.entity_id].state + '%' ]]]"
+    name: |
+      [[[ 
+        return states[entity.entity_id].attributes.friendly_name; 
+      ]]]
+    styles:
+      icon:
+        - color: 'rgba(var(--color-theme),0.9)'
+      label:
+        - align-self: end
+        - justify-self: start
+        - font-weight: bold
+        - font-size: 14px
+        - margin-left: 12px
+        - filter: opacity(100%)
+      name:
+        - justify-self: start
+        - align-self: start
+        - font-weight: bolder
+        - font-size: 12px
+        - filter: opacity(40%)
+        - margin-left: 12px
+      grid:
+        - grid-template-areas: '"i l" "i n"'
+        - grid-template-columns: min-content auto
+        - grid-template-rows: min-content min-content
 ---

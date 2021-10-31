@@ -34,6 +34,7 @@ kramdown:
 collections_dir: collections
 collections:
   templates:
+  languages:
   custom_cards:
   examples:
     output: true
@@ -42,7 +43,7 @@ collections:
 remote_theme: pmarsceill/just-the-docs
 
 aux_links:
-  "Our repository on GitHub":
+  'Find us on GitHub&nbsp;&nbsp;<img src="/assets/images/github.svg" style="opacity: 0.5">':
     - "//github.com/UI-Lovelace-Minimalist/UI"
 aux_links_new_tab: false
 

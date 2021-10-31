@@ -3,7 +3,7 @@ title: Input Boolean Card
 name: card_input_boolean
 category: card
 explanation: "The `input-boolean-card` is to switch an `input_boolean` on or off."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/card_input_boolean.png"
 internal: false
 generator_install: true
 generator_example: true

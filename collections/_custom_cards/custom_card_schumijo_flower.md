@@ -9,6 +9,25 @@ internal: false
 generator_install: true
 generator_example: true
 generator_button: true
+languages:
+  - language: de
+    code: |
+      ulm_custom_card_schumijo_flower_language_variables:
+        variables:
+          ulm_custom_card_schumijo_flower_problem: "Problem"
+          ulm_custom_card_schumijo_flower_correct: "In Ordnung"
+  - language: fr
+    code: |
+      ulm_custom_card_schumijo_flower_language_variables:
+        variables:
+          ulm_custom_card_schumijo_flower_problem: "Problème"
+          ulm_custom_card_schumijo_flower_correct: "Correct"
+  - language: en
+    code: |
+      ulm_custom_card_schumijo_flower_language_variables:
+        variables:
+          ulm_custom_card_schumijo_flower_problem: "Problem"
+          ulm_custom_card_schumijo_flower_correct: "Correct"
 variants:
   - name: 
     title: 
@@ -59,7 +78,7 @@ variants:
       
       flower:
         template:
-          - ulm_language_variables
+          - ulm_custom_card_schumijo_flower_language_variables
         tap_action:
           action: more-info
         icon: |
@@ -73,9 +92,9 @@ variants:
         label: >-
           [[[ 
               if (entity.state == 'problem'){
-                return variables.ulm_problem;
+                return variables.ulm_custom_card_schumijo_flower_problem;
               }else{
-                return variables.ulm_correct;
+                return variables.ulm_custom_card_schumijo_flower_correct;
               }
           ]]]
         state:
@@ -146,7 +165,4 @@ variants:
                         .attribute ha-icon {
                             margin-right: 0px !important;
                         }
-    language_en:
-    language_de:
-    language_fr:
 ---

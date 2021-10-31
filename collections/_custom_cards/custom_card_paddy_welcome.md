@@ -4,11 +4,36 @@ name: custom_card_paddy_welcome
 category: custom_card
 author: paddy0174
 explanation: "The `custom_card_paddy_welcome` shows a welcome message to the logged in user(name) and can show additional infos like news, notifications, weather, buttons or...<br>Three different variants in the download: welcome-card, welcome-card with weather and welcome-card with news (homefeed-card)"
-image_path: "/assets/images/light_slider.png"
+image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
 internal: false
 generator_install: true
 generator_example: true
 generator_button: true
+languages:
+  - language: de
+    code: |
+      ulm_custom_card_paddy_welcome_language_variables:
+        variables:
+          ulm_custom_card_paddy_welcome_morning: 'Guten Morgen'
+          ulm_custom_card_paddy_welcome_afternoon: 'Guten Tag'
+          ulm_custom_card_paddy_welcome_evening: 'Guten Abend'
+          ulm_custom_card_paddy_welcome_hello: 'Hallo'
+  - language: fr
+    code: |
+      ulm_custom_card_paddy_welcome_language_variables:
+        variables:
+          ulm_custom_card_paddy_welcome_morning: 'Bon matin'
+          ulm_custom_card_paddy_welcome_afternoon: 'Bonjour'
+          ulm_custom_card_paddy_welcome_evening: 'Bonne soirée'
+          ulm_custom_card_paddy_welcome_hello: 'Salut'
+  - language: en
+    code: |
+      ulm_custom_card_paddy_welcome_language_variables:
+        variables:
+          ulm_custom_card_paddy_welcome_morning: 'Good morning'
+          ulm_custom_card_paddy_welcome_afternoon: 'Good afternoon'
+          ulm_custom_card_paddy_welcome_evening: 'Good evening'
+          ulm_custom_card_paddy_welcome_hello: 'Hello'
 variants:
   - name: custom_card_paddy_welcome
     title: Welcome Card
@@ -75,9 +100,6 @@ variants:
                   text-align: left;
                   cursor: default;
                 }
-    language_en:
-    language_de:
-    language_fr:
   - name: custom_card_paddy_welcome_with_weather
     title: Welcome Card with Weather
     variables:
@@ -188,9 +210,6 @@ variants:
                   text-align: right;
                   font-size: smaller;
                 }
-    language_en:
-    language_de:
-    language_fr:
   - name: custom_card_paddy_welcome_with_news
     title: Welcome Card With News
     variables:
@@ -302,7 +321,4 @@ variants:
                   font-size: 14px;
                   text-align: left;
                 }
-    language_en:
-    language_de:
-    language_fr:
 ---

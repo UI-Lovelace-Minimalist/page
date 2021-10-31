@@ -3,7 +3,7 @@ title: Navigate Card
 name: card_navigate
 category: card
 explanation: "The `card_navigate` is for navigating inside your HA dashboard(s)."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/card_navigate.png"
 internal: false
 generator_install: true
 generator_example: true

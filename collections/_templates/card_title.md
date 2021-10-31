@@ -2,8 +2,8 @@
 title: Title
 name: card_title
 category: title
-explanation: "Titles (and optionally subtitles) are used to seperate different areas in your design."
-image_path: "/assets/images/title.png"
+explanation: "Titles (and optionally subtitles) are used to seperate different areas in your design. You can use only a title, only a subtitle or both at once."
+image_path: "/assets/images/card_title.png"
 internal: false
 generator_install: true
 generator_example: true
@@ -21,7 +21,7 @@ variables:
     explanation: "This is a subtitle"
 yaml: |-
   - type: 'custom:button-card'
-    template: 
+    template: card_title
     name: My Title
     label: 'Subtitle'  
 ui: |-
