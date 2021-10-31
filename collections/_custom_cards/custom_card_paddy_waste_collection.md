@@ -4,7 +4,7 @@ name: custom_card_paddy_waste_collection
 category: custom_card
 author: paddy0174
 explanation: "The `custom_card_paddy_waste_collection` shows you a button for the next waste collection date. On the day of collection and the day before, the icon and text will be red, to alert you."
-image_path: "/assets/images/light_slider.png"
+image_path: "/assets/images/custom_card_paddy_waste_collection.png"
 internal: false
 generator_install: true
 generator_example: true
@@ -123,10 +123,7 @@ variants:
           notification: >
             [[[
               if (entity.state == 'unavailable' || states[entity.entity_id].attributes.daysTo == 0 || states[entity.entity_id].attributes.daysTo == 1){
-                return `<ha-icon icon="mdi:exclamation" style="width: 12px; height: 12px; color: var(--primary-background-color);"></ha-icon>`
+                return '<ha-icon icon="mdi:exclamation" style="width: 12px; height: 12px; color: var(--primary-background-color);"></ha-icon>'
               }
             ]]]
-    language_en:
-    language_de:
-    language_fr:
 ---

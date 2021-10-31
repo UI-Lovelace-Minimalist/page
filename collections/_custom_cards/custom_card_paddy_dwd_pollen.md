@@ -4,11 +4,23 @@ name: custom_card_paddy_dwd_pollen
 category: custom_card
 author: paddy0174
 explanation: "This is a `custom-card` to show the pollen count, taken from the DWD pollen service via a rest sensor. This card is only available in german, as the DWD (DeutscherWetterDienst => GermanWeatherService) only publishes data for Germany. If you want a translation added, please feel free to open an issue in the repo."
-image_path: "/assets/images/light_slider.png"
+image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
 internal: false
 generator_install: true
 generator_example: true
 generator_button: true
+languages:
+  - language: de
+    code: |
+      custom_card_paddy_dwd_pollen_language_variables:
+        variables:
+          custom_card_paddy_dwd_pollen_6: "hoch"
+          custom_card_paddy_dwd_pollen_5: "mittel bis hoch"
+          custom_card_paddy_dwd_pollen_4: "mittel"
+          custom_card_paddy_dwd_pollen_3: "gering bis mittel"
+          custom_card_paddy_dwd_pollen_2: "gering"
+          custom_card_paddy_dwd_pollen_1: "keine bis gering"
+          custom_card_paddy_dwd_pollen_none: "keine"
 variants:
   - name: 
     title: 
@@ -114,7 +126,4 @@ variants:
             styles:
               icon:
                 - color: 'rgba(var(--color-theme),0.2)'
-    language_en:
-    language_de:
-    language_fr:
 ---

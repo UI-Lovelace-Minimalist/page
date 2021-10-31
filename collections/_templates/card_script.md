@@ -2,13 +2,23 @@
 title: Script Card
 name: card_script
 category: card
-explanation: "This is the `generic-card` to display values from a sensor, eg. to show humidity, your next waste collection date or whatever sensor value is provided."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+explanation: "This card starts/runs a script. You can configure icon and text."
+image_path: "/assets/images/card_script.png"
 internal: false
 generator_install: true
 generator_example: true
 generator_button: true
 variables:
+  - name: ulm_card_script_title
+    type: variable
+    example: Romantic lights
+    required: true
+    explanation: "Name to show for the script."
+  - name: ulm_card_script_icon
+    type: variable
+    example: 'mdi:candle'
+    required: true
+    explanation: "Icon to show for the script."
   - name: "<i>tap_action</i><strong> : </strong>action"
     type: entry
     example: call-service
@@ -27,6 +37,9 @@ variables:
 yaml: |-
   - type: 'custom:button-card'
     template: card_script
+    variables: 
+      ulm_card_script_title: Romantic lights
+      ulm_card_script_icon: 'mdi:candle'
     tap_action:
       action: call-service
       service: script.turn_on
@@ -35,6 +48,9 @@ yaml: |-
 ui: |-
   type: 'custom:button-card'
   template: card_script
+  variables: 
+    ulm_card_script_title: Romantic lights
+    ulm_card_script_icon: 'mdi:candle'
   tap_action:
     action: call-service
     service: script.turn_on

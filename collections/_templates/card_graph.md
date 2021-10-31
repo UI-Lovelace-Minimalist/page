@@ -4,7 +4,7 @@ name: card_graph
 category: card
 explanation: |-
   The `card_graph` shows an entity with the actual state and a *min-graph-card* integrated. This can be used for a thermostat to show the actual temperature and the history."
-image_path: "/assets/images/entity_graph.png"
+image_path: "/assets/images/card_graph.png"
 internal: false
 generator_install: true
 generator_example: true

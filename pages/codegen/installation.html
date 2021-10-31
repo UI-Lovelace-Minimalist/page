@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: codegen_page
 title: Installation
 permalink: codegen/:basename
 nav_order: 2
@@ -24,7 +24,7 @@ parent: CodeGenerator
 </details>
 <p class="text-small text-grey-dk-100 mb-0">Note: This generator is in beta state, so there may be issues! Thanks for understanding!</p>
 
-<form name="minimalist-generator-install" method="post" action="">
+<form name="minimalist-generator-install-test" method="post" action="">
   <fieldset>
     <legend style="text-transform: uppercase;">Language</legend>
     <p style="margin-top: 0px; margin-bottom: 2px;">Select the language you want to use in your templates</p>
@@ -35,22 +35,20 @@ parent: CodeGenerator
   </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Custom-cards</legend>
-      <p style="margin-top: 0px; margin-bottom: 2px;">Select the custom-cards you want to include</p>
-      <input type="checkbox" id="card-aircondition" name="card-aircondition" value="card-aircondition"> <label for="card-aircondition">Aircondition</label><br>
-      <input type="checkbox" id="card-dwd-pollen" name="card-dwd-pollen" value="card-dwd-pollen"> <label for="card-dwd-pollen">DWD Pollen</label><br>
-      <input type="checkbox" id="card-flower" name="card-flower" value="card-flower"> <label for="">Flower</label><br>
-      <input type="checkbox" id="card-waste-collection" name="card-waste-collection" value="card-waste-collection"> <label for="">Waste Collection</label><br>
-      <input type="checkbox" id="card-welcome" name="card-welcome" value="card-welcome"> <label for="default">Welcome</label><br>
-      <input type="checkbox" id="card-nas" name="card-nas" value="card-nas" disabled> <label for="">NAS <i>(temporarily disabled)</i></label><br>
-      <input type="checkbox" id="card-playstation" name="card-playstation" value="card-playstation" disabled> <label for="default">Playstation <i>(temporarily disabled)</i></label><br>
-      <input type="checkbox" id="card-qubino" name="card-qubino" value="card-qubino" disabled> <label for="default">Qubino <i>(temporarily disabled)</i></label><br>
-      <input type="checkbox" id="card-thermostat" name="card-thermostat" value="card-thermostat" disabled> <label for="default">Thermostat <i>(temporarily disabled)</i></label><br>
-      <input type="checkbox" id="card-water-heater" name="card-water-heater" value="card-water-heater" disabled> <label for="default">Water Heater <i>(temporarily disabled)</i></label><br>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Select the custom-cards you want to include</p>
+    {% for card in site.custom_cards -%}
+    {% for variant in card.variants -%}
+    {% if variant.name != nil -%}
+    <input type="checkbox" name="{{ variant.name }}" id="{{ variant.name }}" value="{{ variant.name }}"> <label for="{{ variant.name }}">{{ variant.title }}</label><br>
+    {% else -%}
+    <input type="checkbox" name="{{ card.name }}" id="{{ card.name }}" value="{{ card.name }}"> <label for="{{ card.name }}">{{ card.title }}</label><br>
+    {% endif -%}
+    {% endfor -%}
+    {% endfor -%}
   </fieldset>
   <fieldset>
-    <legend style="text-transform: uppercase;">Example code</legend>
-    <p style="margin-top: 0px; margin-bottom: 2px;">Select, if some example code should be added</p>
-    <input type="checkbox" id="example" name="example" value="example"> <label for="example">add example data</label>
+    <legend style="text-transform: uppercase;">Example data</legend>
+    <input type="checkbox" name="example" id="example" value="example"> <label for="example">Add some example data to the code</label>
   </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Generate</legend>
