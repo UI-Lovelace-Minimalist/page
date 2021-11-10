@@ -33,51 +33,55 @@ ui: |-
   entity: sensor.livingoom_thermometer_battery
 code: |-
   card_battery:
-    template: 
+    template:
       - icon_info_bg
     tap_action:
       action: more-info
+    variables:
+      ulm_card_battery_attribute:
     icon: |
       [[[
-          var icon = 'mdi:help-circle-outline';
-          var battery = '';
+        var icon = "mdi:help-circle-outline";
+        var battery = variables.ulm_card_battery_attribute !== null
+          ? states[entity.entity_id].attributes[variables.ulm_card_battery_attribute]
+          : states[entity.entity_id].state;
   
-          if (variables.ulm_card_battery_attribute != null){
-            battery = states[entity.entity_id].attributes[variables.ulm_card_battery_attribute]
-          } else {
-            battery = states[entity.entity_id].state
-          }
+        if (battery == 100) {
+          icon = "mdi:battery";
+        } else if (battery >= 90) {
+          icon = "mdi:battery-90";
+        } else if (battery >= 80) {
+          icon = "mdi:battery-80";
+        } else if (battery >= 70) {
+          icon = "mdi:battery-70";
+        } else if (battery >= 60) {
+          icon = "mdi:battery-60";
+        } else if (battery >= 50) {
+          icon = "mdi:battery-50";
+        } else if (battery >= 40) {
+          icon = "mdi:battery-40";
+        } else if (battery >= 30) {
+          icon = "mdi:battery-30";
+        } else if (battery >= 20) {
+          icon = "mdi:battery-20";
+        } else if (battery >= 10) {
+          icon = "mdi:battery-10";
+        } else {
+          icon = "mdi:battery-outline";
+        }
   
-          if (battery == 100){
-            icon = 'mdi:battery'
-          } else if (battery >= 90){
-            icon = 'mdi:battery-90'
-          } else if (battery >= 80){
-            icon = 'mdi:battery-80'
-          } else if (battery >= 70){
-            icon = 'mdi:battery-70'
-          } else if (battery >= 60){
-            icon = 'mdi:battery-60'
-          } else if (battery >= 50){
-            icon = 'mdi:battery-50'
-          } else if (battery >= 40){
-            icon = 'mdi:battery-40'
-          } else if (battery >= 30){
-            icon = 'mdi:battery-30'
-          } else if (battery >= 20){
-            icon = 'mdi:battery-20'
-          } else if (battery >= 10){
-            icon = 'mdi:battery-10'
-          } else {
-            icon = 'mdi:battery-outline'
-          }
-  
-          return icon;
+        return icon;
       ]]]
-    label: "[[[ return states[entity.entity_id].state + '%' ]]]"
+    label: |
+      [[[
+        var battery = variables.ulm_card_battery_attribute !== null
+          ? states[entity.entity_id].attributes[variables.ulm_card_battery_attribute]
+          : states[entity.entity_id].state;
+        return battery + "%";
+      ]]]
     name: |
-      [[[ 
-        return states[entity.entity_id].attributes.friendly_name; 
+      [[[
+        return states[entity.entity_id].attributes.friendly_name;
       ]]]
     styles:
       icon:

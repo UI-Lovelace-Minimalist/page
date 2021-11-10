@@ -34,6 +34,8 @@ ui: |-
   entity: light.my_livingroom_light
 code: |-
   card_light_slider:
+    template: 
+      - ulm_language_variables
     variables:
       ulm_card_light_slider_name: "[[[ return entity.attributes.friendly_name ]]]"
     show_icon: false
@@ -43,8 +45,6 @@ code: |-
       - operator: template
         value: "[[[ return entity.state == 'on' ]]]"
         styles:
-          grid:
-            - row-gap: 12px
           card:
             - background-color: 'rgba(var(--color-background-yellow),var(--opacity-bg))'
     styles:
@@ -52,6 +52,7 @@ code: |-
         - grid-template-areas: '"item1" "item2"'
         - grid-template-columns: 1fr
         - grid-template-rows: min-content min-content
+        - row-gap: 12px
       card:
         - border-radius: var(--border-radius)
         - box-shadow: var(--box-shadow)
@@ -62,13 +63,30 @@ code: |-
           type: 'custom:button-card'
           template:
             - icon_info
-            - light
+            - yellow_slider
           entity: "[[[ return entity.entity_id ]]]"
+          label: >-
+            [[[  
+              if (entity.state !='unavailable'){
+                if (entity.state =='off'){
+                  return variables.ulm_off;  
+                } else if (entity.state == 'on'){
+                  if (entity.attributes.brightness != null){
+                    var bri = Math.round(entity.attributes.brightness / 2.55);
+                    return (bri ? bri : '0') + '%';
+                  } else {
+                    return variables.ulm_on
+                  } 
+                }
+              } else {
+                return variables.ulm_unavailable;
+              }
+            ]]]
           name: "[[[ return variables.ulm_card_light_slider_name ]]]"
           styles:
             card:
               - box-shadow: none
-              - border-radius: var(--border-radius) var(--border-radius) 0px 0px
+              - border-radius: var(--border-radius) var(--border-radius) var(--border-radius) var(--border-radius)
               - padding: 0px
       item2:
         card:

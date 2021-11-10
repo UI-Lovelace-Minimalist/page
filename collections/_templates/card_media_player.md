@@ -46,6 +46,7 @@ code: |-
       - ulm_language_variables
     icon: |
       [[[
+        var icon = 'mdi:speaker';
         if(entity.attributes.app_name){
           var app = entity.attributes.app_name.toLowerCase();
           if(app == 'spotify'){
@@ -83,5 +84,5 @@ code: |-
               var label = states[entity.entity_id].attributes.media_album_name;
             }
             return label;
-          ]]]
+        ]]]
 ---

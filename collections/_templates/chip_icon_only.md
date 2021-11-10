@@ -13,25 +13,26 @@ variables:
     type: variable
     example: '❤'
     required: false 
-    explanation: "This is the icon to show. See [icons](#icons) at the end of this page to read more about the used unicode `emojis`."
+    explanation: "This is the icon to show. See <a href='/usage#icons'>icons</a> to read more about the used unicode `emojis`."
 yaml: |-
   - type: 'custom:button-card'
     template: chip_icon_only
     variables:
-      ulm_chip_icon_only: '❤️'"
+      ulm_chip_icon_only: '❤️'
 ui: |-
   type: 'custom:button-card'
   template: chip_icon_only
   variables:
-    ulm_chip_icon_only: '❤️'"
+    ulm_chip_icon_only: '❤️'
 code: |-
   chip_icon_only:
     template: chips
-    variables:
-      icon: '❔'
-    show_icon: true
-    icon: "[[[ return variables.ulm_chip_icon_only ? variables.ulm_chip_icon_only : variables.icon ]]]"
-    styles:
-      grid:
-        - grid-template-areas: '"i"'
+    label: |
+      [[[
+        var icon = '❔';
+        if (variables.ulm_chip_icon_only){
+          var icon = variables.ulm_chip_icon_only;
+        } 
+        return icon;
+      ]]]
 ---

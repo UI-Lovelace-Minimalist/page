@@ -19,17 +19,17 @@ variables:
     example: 'mdi:candle'
     required: true
     explanation: "Icon to show for the script."
-  - name: "<i>tap_action</i><strong> : </strong>action"
+  - name: "tap_action_action"
     type: entry
     example: call-service
     required: true 
     explanation: "Only call-service is allowed here."
-  - name: "<i>tap_action</i><strong> : </strong>service"
+  - name: "tap_action_service"
     type: entry
     example: script.turn_on
     required: true 
     explanation: "Let the script run by turning it on."
-  - name: "<i>tap_action</i><strong> : </strong>service_data"
+  - name: "tap_action_service_data"
     type: entry
     example: "entity_id: script.romantic_livingroom_lights"
     required: true 

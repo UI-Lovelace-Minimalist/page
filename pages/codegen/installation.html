@@ -4,6 +4,7 @@ title: Installation
 permalink: codegen/:basename
 nav_order: 2
 parent: CodeGenerator
+custom_css: codegen
 ---
 
 <script src="/assets/js/codegen-install.js"></script>
@@ -11,7 +12,7 @@ parent: CodeGenerator
 <p>Here you can generate the code you need to <strong>install</strong> this "theme" via `UI`-mode.</p>
 <p>It bundles all necessary template data, language variables and custom-cards into one single block, so you can copy & paste it into your raw-config-editor.</p>
 <details>
-  <summary>Show the instructions</summary>
+  <summary>Show instructions</summary>
   <ol>
     <li>Select the language you want to use</li>
     <li>Select the custom-cards you want to install</li>
@@ -25,6 +26,11 @@ parent: CodeGenerator
 <p class="text-small text-grey-dk-100 mb-0">Note: This generator is in beta state, so there may be issues! Thanks for understanding!</p>
 
 <form name="minimalist-generator-install-test" method="post" action="">
+  <fieldset>
+    <legend style="text-transform: uppercase;">Main template file</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">This is the main template file from UI-Lovelace-Minimalist. <i>This must be selected.</i></p>
+    <input type="checkbox" name="main_template" id="main_template" value="main_template" checked="checked" disabled> <label for="main_template">UI-Lovelace-Minimalist main template file</label><br>
+  </fieldset>
   <fieldset>
     <legend style="text-transform: uppercase;">Language</legend>
     <p style="margin-top: 0px; margin-bottom: 2px;">Select the language you want to use in your templates</p>

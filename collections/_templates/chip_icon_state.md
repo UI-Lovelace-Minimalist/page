@@ -13,8 +13,7 @@ variables:
     type: variable
     example: '🛏️'
     required: true 
-    explanation: |-
-      This is the icon to show. See <a href="#icons">icons</a> at the end of this page to read more about the used unicode `emojis`.
+    explanation: "This is the icon to show. See  See <a href='/usage#icons'>icons</a> to read more about the used unicode `emojis`."
   - name: ulm_chip_icon_state_entity
     type: variable
     example: 'sensor.bed_occupancy'
@@ -35,20 +34,18 @@ ui: |-
 code: |-
   chip_icon_state:
     template: chips
-    variables:
-      icon: "❔"
     triggers_update:
       - "[[[ variables.ulm_chip_icon_state_entity ]]]"
-    show_icon: true
-    show_label: true
-    icon: "[[[ return variables.ulm_chip_icon_state_icon ? variables.ulm_chip_icon_state_icon : variables.icon ]]]"
-    label: "[[[ return variables.ulm_chip_icon_state_entity ? states[variables.ulm_chip_icon_state_entity].state : '' ]]]"
-    styles:
-      label:
-        - justify-self: center
-        - padding: 0px 6px
-        - font-weight: bold
-        - font-size: 14px
-      grid:
-        - grid-template-areas: '"i l"'
+    label: |
+      [[[
+        var icon = '❔';
+        if (variables.ulm_chip_icon_state_icon){
+          var icon = variables.ulm_chip_icon_state_icon;
+        } 
+        var state = '';
+        if (states[variables.ulm_chip_icon_state_entity].state){
+          var state = states[variables.ulm_chip_icon_state_entity].state;
+        } 
+        return icon + ' ' + state;
+      ]]]
 ---

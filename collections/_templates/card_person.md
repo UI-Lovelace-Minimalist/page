@@ -20,7 +20,7 @@ variables:
     explanation: "The person entity"
   - name: ulm_card_person_use_entity_picture
     type: variable
-    example: 
+    example: true or false
     required: false 
     explanation: "If you set this to true, the card shows the entity picture from your user, otherwise (set to false) shows the icon. Default is false."
   - name: ulm_card_person_zone1
@@ -58,6 +58,7 @@ code: |-
       ulm_card_person_zone2: ''
     tap_action:
       action: more-info
+      entity: "[[[ return variables.ulm_card_person_entity; ]]]"
     show_label: true
     show_name: true
     label: "[[[ return states[variables.ulm_card_person_entity].state ]]]"

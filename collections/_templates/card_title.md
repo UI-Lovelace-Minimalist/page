@@ -13,12 +13,12 @@ variables:
     type: entry
     example: My_Title
     required: true 
-    explanation: "This is a main title"
+    explanation: "This is a main title (either title or subtitle is required)"
   - name: label
     type: entry
     example: My_Subtitle
     required: true 
-    explanation: "This is a subtitle"
+    explanation: "This is a subtitle (either title or subtitle is required)"
 yaml: |-
   - type: 'custom:button-card'
     template: card_title

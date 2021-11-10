@@ -1,6 +1,11 @@
 
-<link rel="stylesheet" href="{{ '/assets/css/prism.css' }}">
-<link href="/assets/css/lightbox.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/prism.css">
+<link rel="stylesheet" href="/assets/css/lightbox.min.css">
+{% if page.custom_css -%}
+{% for stylesheet in page.custom_css %}
+<link rel="stylesheet" href="/assets/css/{{ stylesheet }}.css">
+{% endfor -%}
+{% endif -%}
 <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">

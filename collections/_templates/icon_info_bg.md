@@ -8,7 +8,8 @@ code: |-
     show_label: true
     show_name: true
     state:
-      - styles:
+      - value: 'unavailable'
+        styles:
           custom_fields:
             notification:
               - border-radius: 50%
@@ -24,7 +25,6 @@ code: |-
                   [[[
                     return "rgba(var(--color-red),1)";
                   ]]]
-        value: unavailable
     styles:
       icon:
         - color: 'rgba(var(--color-theme),0.2)'
