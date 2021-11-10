@@ -34,7 +34,9 @@ ui: |-
     ulm_chip_electric_price: sensor.my_electric_power_price
 code: |-
   chip_power_consumption:
-    template: chips
+    template:
+      - chips
+      - ulm_language_variables
     triggers_update:
       - "[[[ variables.ulm_chip_electric_consumption ]]]"
     label: |

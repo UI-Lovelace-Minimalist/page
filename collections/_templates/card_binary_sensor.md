@@ -16,7 +16,7 @@ variables:
     explanation: "The <i>binary_sensor</i> to show"
   - name: show_last_changed
     type: entry
-    example: ""
+    example: true or false
     required: false 
     explanation: ""
 yaml: |-

@@ -13,7 +13,7 @@ variables:
     type: variable
     example: '💻'
     required: true 
-    explanation: "This is the icon to show. See [icons](#icons) at the end of this page to read more about the used unicode `emojis`."
+    explanation: "This is the icon to show. See <a href='/usage#icons'>icons</a> to read more about the used unicode `emojis`."
   - name: ulm_chip_icon_double_state_entity_1
     type: variable
     example: 'sensor.nas_disk_used'
@@ -41,21 +41,23 @@ ui: |-
 code: |-
   chip_icon_double_state:
     template: chips
-    variables:
-      icon: "❔"
     triggers_update:
-      - "[[[ variables.ulm_chip_icon_state_entity_1 ]]]"
-      - "[[[ variables.ulm_chip_icon_state_entity_2 ]]]"
-    show_icon: true
-    show_label: true
-    icon: "[[[ return variables.ulm_chip_icon_double_state_icon ? variables.ulm_chip_icon_double_state_icon : variables.icon ]]]"
-    label: "[[[ return variables.ulm_chip_icon_double_state_entity_1 ? states[variables.ulm_chip_icon_double_state_entity_1].state + ' • ' + states[variables.ulm_chip_icon_double_state_entity_2].state : '' ]]]"
-    styles:
-      label:
-        - justify-self: center
-        - padding: 0px 6px
-        - font-weight: bold
-        - font-size: 14px
-      grid:
-        - grid-template-areas: '"i l"'
+      - "[[[ variables.ulm_chip_icon_double_state_entity_1 ]]]"
+      - "[[[ variables.ulm_chip_icon_double_state_entity_2 ]]]"
+    label: |
+      [[[
+        var icon = '❔';
+        if (variables.ulm_chip_icon_double_state_icon){
+          var icon = variables.ulm_chip_icon_double_state_icon;
+        } 
+        var state1 = '';
+        if (states[variables.ulm_chip_icon_double_state_entity_1].state){
+          var state1 = states[variables.ulm_chip_icon_double_state_entity_1].state;
+        } 
+        var state2 = '';
+        if (states[variables.ulm_chip_icon_double_state_entity_2].state){
+          var state2 = states[variables.ulm_chip_icon_double_state_entity_2].state;
+        } 
+        return icon + ' ' + state1 + ' • ' + state2;
+      ]]]
 ---

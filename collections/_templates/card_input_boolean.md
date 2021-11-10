@@ -28,7 +28,7 @@ code: |-
       - icon_info_bg
       - ulm_language_variables
       - blue
-    name: "[[[ return entity.name != '' ? entity.name : entity.attribute.friendly_name ]]]"
+    name: "[[[ return entity.attributes.friendly_name != '' ? entity.attributes.friendly_name : entity.entity_id ]]]"
     label: >
       [[[
         if (entity.state != 'unavailable'){

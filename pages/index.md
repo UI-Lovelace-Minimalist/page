@@ -1,6 +1,8 @@
 ---
 layout: home
 permalink: :basename
+title: Home
+nav_exclude: true
 ---
 
 # Welcome to the UI-Lovelace-Minimalist wiki!  

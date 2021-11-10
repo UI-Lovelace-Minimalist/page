@@ -7,6 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  'UI-Lovelace-Minimalist'
 
+
 # Build settings
 theme: "just-the-docs"
 #plugins:
@@ -56,6 +57,8 @@ ulm_color_blue: '#2C84FA' # title and entry
 ulm_color_green: '#11B584' # vertical
 ulm_color_yellow: '#FFEB82' # chip
 ulm_color_orange: '#FF9101' # variable
+ulm_color_light_grey: '#F5F6FA' # tooltip font color
+ulm_color_dark_grey: '#5C5962' # tooltip bg
 ulm_color_ulm_blue: '#3D5AFE' # minimalist blue
 
-ulm_version: 1.0.0-beta.5
+ulm_version: 1.0.0-beta.6

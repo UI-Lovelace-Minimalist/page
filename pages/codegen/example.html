@@ -4,6 +4,7 @@ title: Example
 permalink: codegen/:basename
 nav_order: 3
 parent: CodeGenerator
+custom_css: codegen
 ---
 
 <script src="/assets/js/codegen-examples.js"></script>
@@ -16,11 +17,17 @@ parent: CodeGenerator
 <p class="text-small text-grey-dk-100 mb-0">Note: This generator is in beta state, so there may be issues! Thanks for understanding!</p>
 <form name="minimalist-generator-examples" method="post" action="">
   <fieldset>
+    <legend style="text-transform: uppercase;">Mode</legend>
+    <p style="margin-top: 0px; margin-bottom: 2px;">Which mode are you using?</p>
+    <input type="radio" name="mode" id="yaml_mode" value="yaml" checked="checked"> <label for="yaml_mode">Yaml-mode</label>
+    <input type="radio" name="mode" id="ui_mode" value="ui"> <label for="ui_mode">UI-mode</label><br>
+  </fieldset>
+  <fieldset>
     <legend style="text-transform: uppercase;">Chips</legend>
     <p style="margin-top: 0px; margin-bottom: 2px;">Choose the chips, you want to use.</p>
     {% for template in site.templates -%}
     {% if template.category == 'chip' -%}
-    <input type="checkbox" id="{{ template.name }}" name="{{ template.name }}" value="{{ template.name }}"> <label for="{{ template.name }}">{{ template.title }}</label><br>
+    <input type="checkbox" id="{{ template.name }}" name="{{ template.name }}" value="{{ template.name }}"> <label for="{{ template.name }}">{{ template.title }}</label> {% if template.explanation != nil and template.explanation != '' -%}<div class="tooltip">&nbsp;&quest;&nbsp;<span class="tooltiptext">{{ template.explanation }}</span></div>{% endif -%}<br>
     {% endif %}
     {% endfor -%}
   </fieldset>
@@ -34,7 +41,7 @@ parent: CodeGenerator
     <p style="margin-top: 0px; margin-bottom: 2px;">Select the cards you want to use.</p>
     {% for template in site.templates -%}
     {% if template.category == 'card' and template.name != 'card_title' -%}
-    <input type="checkbox" id="{{ template.name }}" name="{{ template.name }}" value="{{ template.name }}"> <label for="{{ template.name }}">{{ template.title }}</label><br>
+    <input type="checkbox" id="{{ template.name }}" name="{{ template.name }}" value="{{ template.name }}"> <label for="{{ template.name }}">{{ template.title }}</label> {% if template.explanation != nil and template.explanation != '' -%}<div class="tooltip">&nbsp;&quest;&nbsp;<span class="tooltiptext">{{ template.explanation }}</span></div>{% endif -%}<br>
     {% endif -%}
     {% endfor -%}
   </fieldset>

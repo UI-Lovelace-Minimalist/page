@@ -11,7 +11,7 @@ generator_button: true
 variables:
   - name: ulm_chip_back_path
     type: variable
-    example: 'See example code'
+    example: /ui-lovelace-minimalist/home
     required: true 
     explanation: "Set the navigation path to your default view, eg. <i>ui-lovelace-minimalist/home</i> or <i>lovelace</i>"
 yaml: |-
