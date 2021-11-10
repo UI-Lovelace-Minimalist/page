@@ -11,7 +11,7 @@ If you have configured something great for this theme, like a new card, you migh
 
 ## Building your custom-card  
 * Create a new folder following the [naming convention](#naming-conventions) of this theme, preferably by using the username and describing your card, eg. *custom_card_paddy_temperature*.
-* Create a new file `README.md` where you describe your card, note of specific requirements (like `custom_components` from HA or other `custom-cards`) and your name as the author. Find a template for that a little downwards.    
+* Create a new file `README.md` where you describe your card, note of specific requirements (like `custom_components` from HA or other `custom-cards`) and your name as the author. Find a template for that on our [boilerplate page](/development/boilerplate#readme).    
 * Create a new file in this folder, naming it the same like your folder, eg. *custom_card_paddy_temperature.yaml*.
 * <b>IMPORTANT!</b>  
   Name the folder and file to your liking (preferably describing your chip/card), <b>but you must add the prefix <i>custom_</i></b> to both, the folder and the file name. Otherwise the file will not be correctly included!  
