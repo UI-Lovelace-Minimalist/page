@@ -3,7 +3,7 @@ title: Light Slider Card (collapse)
 name: card_light_slider_collapse
 category: card
 explanation: "The `light-slider-card (collapse)` is an enhanced version of the `light-slider-card`, that only shows the slider, if the light is on. In the picture on the right, the 'off'-state is like row Nr1, the 'on'-state like row Nr2"
-image_path: "/assets/images/card_light_slider.png"
+image_path: "/assets/images/card_light_slider_collapse.png"
 internal: false
 generator_install: true
 generator_example: true
