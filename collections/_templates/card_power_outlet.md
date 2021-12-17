@@ -3,7 +3,7 @@ title: Power Outlet Card
 name: card_power_outlet
 category: card
 explanation: "This is the `power-outlet-card`. It shows you the state of a power outlet, and if configured, the actual power consumption of the power outlet."
-image_path: "/assets/images/outlet.png"
+image_path: "/assets/images/card_power_outlet.png"
 internal: false
 generator_install: true
 generator_example: true

@@ -3,7 +3,7 @@ title: Media Player Card (with control)
 name: card_media_player_with_control
 category: card
 explanation: "This is the second `media-player-card`, in contrast to the first one above, it shows the cover art from your media player."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/card_media_player_with_art.png"
 internal: false
 generator_install: true
 generator_example: true

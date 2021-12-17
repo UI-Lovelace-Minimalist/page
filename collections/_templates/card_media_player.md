@@ -13,7 +13,7 @@ information: |-
     <li><i>YoutubeMusic</i></li>
   </ul>
   Unfortunately <i>AmazonMusic</i>, <i>AppleMusic</i> and <i>Deezer</i> don't have an `mdi:icon`, so the default icon (a speaker) will be presented.
-image_path: "/assets/images/media.png"
+image_path: "/assets/images/card_media_player.png"
 internal: false
 generator_install: true
 generator_example: true

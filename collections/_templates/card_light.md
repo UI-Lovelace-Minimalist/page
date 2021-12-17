@@ -3,7 +3,7 @@ title: Light Card
 name: card_light
 category: card
 explanation: "This is the `light-card`, used to toggle a light or a light group. Shows state of the light and, if available, brightness in %. In the picture on the right in row Nr1"
-image_path: "/assets/images/card_light_combi.png"
+image_path: "/assets/images/card_light.png"
 internal: false
 generator_install: true
 generator_example: true

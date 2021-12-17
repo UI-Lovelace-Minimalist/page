@@ -3,7 +3,7 @@ title: Light Slider Card (horizontal)
 name: card_light_slider_horizontal
 category: card
 explanation: "The `light-slider-card (horizontal)` is an enhanced version of the `light-slider-card`, that shows the slider on the right of the button, making it a 1-line-card. See the picture on the right row Nr3"
-image_path: "/assets/images/card_light_combi.png"
+image_path: "/assets/images/card_light_slider_horizontal.png"
 internal: false
 generator_install: true
 generator_example: true
