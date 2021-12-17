@@ -39,16 +39,16 @@ yaml: |-
     variables:
       ulm_card_person_entity: person.username
       ulm_card_person_use_entity_picture: true
-      ulm_card_person_zone1: work
-      ulm_card_person_zone2: school
+      ulm_card_person_zone1: zones.YOUR_ZONE
+      ulm_card_person_zone2: zones.YOUR_ZONE
 ui: |-
   type: 'custom:button-card'
   template: card_person
   variables:
     ulm_card_person_entity: person.username
     ulm_card_person_use_entity_picture: true
-    ulm_card_person_zone1: work
-    ulm_card_person_zone2: school
+    ulm_card_person_zone1: zones.YOUR_ZONE
+    ulm_card_person_zone2: zones.YOUR_ZONE
 code: |-
   card_person:
     template: icon_info_bg
