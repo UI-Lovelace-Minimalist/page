@@ -4,7 +4,7 @@ name: card_light_slider
 category: card
 author: schumijo
 explanation: "The `light-slider-card` controls a light with the added possibilty to control the brightness of your light with a slider. See row Nr2 in the picture on the right."
-image_path: "/assets/images/card_light_combi.png"
+image_path: "/assets/images/card_light_slider.png"
 internal: false
 generator_install: true
 generator_example: true

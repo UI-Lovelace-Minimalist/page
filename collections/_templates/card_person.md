@@ -4,7 +4,7 @@ name: card_person
 category: card
 explanation: |-
   The `card_person` shows if a person is `home` or `not_home`. If you have setup other <a href="https://www.home-assistant.io/integrations/zone/">zones</a>, it will show these as well.
-image_path: "/assets/images/person.png"
+image_path: "/assets/images/card_person.png"
 information: |-
   <strong>Dot color:</strong> at home - blue | away - green<br>
   <strong>Dot icon:</strong> at home - <i>Home icon</i> | not home - <i>Home minus icon</i> | if you configured an icon for a <a href="https://www.home-assistant.io/integrations/zone/">zone</a>, it will be used

@@ -4,7 +4,7 @@ name: card_media_player_with_controls
 category: card
 explanation: |-
   With the `card_media_player_with_controls` you have the state of your media_player and on the second line PREVIOUS / PLAY-PAUSE / NEXT to control it
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/card_media_player_control.png"
 internal: false
 generator_install: true
 generator_example: true

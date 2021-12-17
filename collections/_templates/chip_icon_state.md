@@ -3,7 +3,7 @@ title: Chip Icon With State
 name: chip_icon_state
 category: chip
 explanation: "This `chip` displays an icon and a label, where the label can be any state of a sensor you configure."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/chip_icon_state.png"
 internal: false
 generator_install: true
 generator_example: true

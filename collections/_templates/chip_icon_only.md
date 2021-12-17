@@ -3,7 +3,7 @@ title: Chip Icon Only
 name: chip_icon_only
 category: chip
 explanation: "This `chip` displays just an icon."
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/chip_icon_only.png"
 internal: false
 generator_install: true
 generator_example: true

@@ -4,7 +4,7 @@ name: card_cover_with_buttons
 category: card
 explanation: |-
   With the `cover-card` you have the state of your cover and on the second line UP / PAUSE / DOWN to control it.
-image_path: "/assets/images/card_cover_with_buttons.png"
+image_path: "/assets/images/card_cover_buttons.png"
 internal: false
 generator_install: true
 generator_example: true
