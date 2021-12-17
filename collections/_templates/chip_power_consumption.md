@@ -3,7 +3,7 @@ title: Chip Power Consumption
 name: chip_power_consumption
 category: chip
 explanation: "This `chip` shows you the electric consumption from a sensor. Configurable to show power (kWh) or price (currency)."
-image_path: "/assets/images/power_consumption.png"
+image_path: "/assets/images/chip_power_consumption.png"
 internal: false
 generator_install: true
 generator_example: true

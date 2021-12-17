@@ -3,7 +3,7 @@ title: Chip Presence Detection (counter)
 name: chip_presence_detection
 category: chip
 explanation: "This `chip` shows you the actual presence in your home. Shows residents and guests (guests only if one or more)."
-image_path: "/assets/images/chip_localisation_present.png"
+image_path: "/assets/images/chip_presence_detection.png"
 internal: false
 generator_install: true
 generator_example: true

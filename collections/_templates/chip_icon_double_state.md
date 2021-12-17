@@ -3,7 +3,7 @@ title: Chip Icon With Double State
 name: chip_icon_double_state
 category: chip
 explanation: ""
-image_path: "https://via.placeholder.com/426x96/efefef/999999?text=Sorry,+no+image+yet"
+image_path: "/assets/images/chip_icon_double_state.png"
 internal: false
 generator_install: true
 generator_example: true
