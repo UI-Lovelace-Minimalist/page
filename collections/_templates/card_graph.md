@@ -3,7 +3,7 @@ title: Graph Card
 name: card_graph
 category: card
 explanation: |-
-  The `card_graph` shows an entity with the actual state and a *min-graph-card* integrated. This can be used for a thermostat to show the actual temperature and the history. It how supports dual graphs as well as bar style graphs."
+  The `card_graph` shows an entity with the actual state and a *min-graph-card* integrated. This can be used for a thermostat to show the actual temperature and the history. It now supports dual graphs as well as bar style graphs."
 image_path: "/assets/images/card_graph.png"
 internal: false
 generator_install: true
