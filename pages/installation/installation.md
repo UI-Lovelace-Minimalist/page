@@ -33,5 +33,5 @@ There is a feature request at the Home Assistant forum, if you'd like to see thi
 Whatever way you choose, here are the instructions:  
 
 * [For `yaml`-mode here](/installation/yaml-mode)  
-* [For `UI`-mode here](/installation//ui-mode)
+* [For `UI`-mode here](/installation/ui-mode)
 
